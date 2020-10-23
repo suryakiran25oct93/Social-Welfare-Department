@@ -1,0 +1,195 @@
+create database swd;
+
+use swd;
+
+create table vo
+(
+id varchar(200) primary key,
+name varchar(200) not null,
+mobile varchar(200) not null unique,
+username varchar(200) not null unique,
+password varchar(200) not null,
+collegename varchar(200) not null,
+schoolname varchar(200) not null,
+status varchar(200) not null
+);
+
+
+create table college
+(
+id varchar(200) primary key,
+name varchar(200) not null unique,
+code varchar(200) not null,
+area varchar(200) not null,
+city varchar(200) not null,
+pin varchar(200) not null,
+university varchar(200) not null,
+status varchar(200) not null
+);
+
+
+create table scholarship
+(
+id varchar(200) primary key,
+ssc_htno varchar(200) not null unique,
+ssc_passyear varchar(200) not null,
+ssc_type varchar(200) not null,
+dateofbirth varchar(200) not null,
+cet varchar(200) not null,
+cet_type varchar(200) not null,
+cet_year varchar(200) not null,
+cet_htno varchar(200) not null unique,
+cet_rank varchar(200) not null,
+dateofallotment varchar(200) not null,
+college_state varchar(200) not null,
+college_district varchar(200) not null,
+college_mandal varchar(200) not null,
+college_university varchar(200) not null,
+college_name varchar(200) not null,
+college_course varchar(200) not null,
+college_year varchar(200) not null,
+email varchar(200) not null unique,
+ph varchar(200) not null,
+phfile longblob,
+caste_religion varchar(200) not null,
+caste_name varchar(200) not null,
+castefile longblob not null,
+caste_meeseva_no varchar(200) not null unique,
+caste_applicant_name varchar(200) not null,
+caste_father_name varchar(200) not null,
+caste_district varchar(200) not null,
+caste_mandal varchar(200) not null,
+caste_mro_name varchar(200) not null,
+caste_meeseva varchar(200) not null,
+incomefile longblob not null,
+income_meeseva_no varchar(200) not null unique,
+income_applicant_name varchar(200) not null,
+income_father_name varchar(200) not null,
+income_district varchar(200) not null,
+income_mandal varchar(200) not null,
+income_mro_name varchar(200) not null,
+income varchar(200) not null,
+bank_district varchar(200) not null,
+bank_name varchar(200) not null,
+branch_name_ifsc_code varchar(200) not null,
+bank_account_no varchar(200) not null unique,
+photofile longblob not null,
+bankpassbookfile longblob not null,
+uidfile longblob not null,
+status varchar(200) not null,
+status1 varchar(200) not null,
+toa varchar(200) not null,
+applydate varchar(200) not null,
+no varchar(200) not null
+);
+
+
+create table premetric
+(
+id varchar(200) primary key,
+firstname varchar(200) not null,
+lastname varchar(200) not null,
+fathername varchar(200) not null,
+mothername varchar(200) not null,
+gender varchar(200) not null,
+dateofbirth varchar(200) not null,
+ration_card_no varchar(200) not null unique,
+profession varchar(200) not null,
+ph varchar(200) not null,
+phfile longblob,
+community varchar(200) not null,
+caste_category varchar(200) not null,
+sub_caste varchar(200) not null,
+country varchar(200) not null,
+state varchar(200) not null,
+district varchar(200) not null,
+mandal varchar(200) not null,
+village varchar(200) not null,
+street varchar(200) not null,
+landmark varchar(200) not null,
+locality varchar(200) not null,
+pin varchar(200) not null,
+mobileno varchar(200) not null unique,
+mobilenoowner varchar(200) not null,
+email varchar(200) not null unique,
+school_district varchar(200) not null,
+school_mandal varchar(200) not null,
+school_name varchar(200) not null,
+class varchar(200) not null,
+medium varchar(200) not null,
+admission_no varchar(200) not null,
+admission_date varchar(200) not null,
+stay_type varchar(200) not null,
+previous_class varchar(200) not null,
+result varchar(200) not null,
+bank_district varchar(200) not null,
+bank_name varchar(200) not null,
+branch_name_ifsc_code varchar(200) not null,
+bank_account_no varchar(200) not null unique,
+caste_meeseva_no varchar(200) not null unique,
+caste_applicant_name varchar(200) not null,
+caste_father_name varchar(200) not null,
+caste_district varchar(200) not null,
+caste_mandal varchar(200) not null,
+caste_mro_name varchar(200) not null,
+income varchar(200) not null,
+photofile longblob not null,
+bankpassbookfile longblob not null,
+uidfile longblob not null,
+status varchar(200) not null,
+status1 varchar(200) not null,
+toa varchar(200) not null,
+applydate varchar(200) not null
+);
+
+
+create table scholarship_renewal
+(
+id varchar(200) primary key,
+marksmemo longblob not null
+);
+
+
+create table premetric_renewal
+(
+id varchar(200) primary key,
+marksmemo longblob not null
+);
+
+
+create table contact
+(
+id varchar(200) primary key,
+name varchar(200) not null, 
+email varchar(200) not null unique, 
+query varchar(200) not null, 
+reply varchar(200) default null
+);
+
+create table coursebudget
+(
+totalbudget varchar(200) not null, 
+course varchar(200) not null, 
+percentage varchar(200) not null, 
+allotedbudget varchar(200) not null
+);
+
+
+create table castebudget
+(
+totalbudget varchar(200) not null, 
+caste varchar(200) not null, 
+percentage varchar(200) not null, 
+allotedbudget varchar(200) not null
+);
+
+
+create table verification
+(
+ssc_htno varchar(200) not null,
+cet_type varchar(200) not null,
+cet_htno varchar(200) not null,
+income_meeseva_no varchar(200) not null,
+caste_meeseva_no varchar(200) not null,
+bank_account_no varchar(200) not null
+);
